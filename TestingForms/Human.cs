@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace TestingForms
 {
+    [Serializable]
     class Human
     {
         public int weight;
@@ -16,7 +17,7 @@ namespace TestingForms
             string template = "abcdefghijklmno";
             Thread.Sleep(10);
             Random rand = new Random();
-            weight = rand.Next(20, 60);
+            weight = rand.Next(50, 90);
             name = template.Substring(rand.Next(14));
         }
     }

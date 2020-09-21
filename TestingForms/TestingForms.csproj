@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer.cs" />
+    <Compile Include="FormNonVisual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNonVisual.Designer.cs">
+      <DependentUpon>FormNonVisual.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,9 @@
     <Compile Include="Human.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormNonVisual.resx">
+      <DependentUpon>FormNonVisual.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,6 +94,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NonVisualComponentLibrary\NonVisualComponentLibrary.csproj">
+      <Project>{a6fc6b20-8166-4d73-95e7-43e89d18c325}</Project>
+      <Name>NonVisualComponentLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VisualComponentLibrary\VisualComponentLibrary.csproj">
       <Project>{d596e25b-41e4-4f48-b711-98c290b500ae}</Project>
       <Name>VisualComponentLibrary</Name>
