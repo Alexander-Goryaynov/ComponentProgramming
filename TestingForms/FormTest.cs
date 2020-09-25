@@ -10,16 +10,13 @@ namespace TestingForms
         public FormTest()
         {
             InitializeComponent();
-            var list = new List<Human>();
+            var list = new List<Customer>();
             for(int i = 0; i < 5; i++)
-            {
-                list.Add(new Human());
-            }
-            for(int i = 0; i < 3; i++)
             {
                 list.Add(new Customer());
             }
-            controlTreeViewOutput.FillTreeView<Human>(list);
+            var propNameSequence = new string[] {"name", "weight", "cash"};
+            controlTreeViewOutput.FillTreeView<Customer>(list, propNameSequence);
         }
 
         private void controlTextBoxInput_TextInputHappened(object sender, EventArgs e)

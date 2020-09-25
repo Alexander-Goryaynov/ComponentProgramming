@@ -81,11 +81,11 @@ namespace VisualComponentLibrary
             treeView.NodeMouseClick += (sender, e) =>
             {
                 treeView_NodeMouseClick(sender, e);
-                _treeViewNodeMouseClick?.Invoke(sender, e);                
+                _treeViewNodeMouseClick?.Invoke(sender, e);
             };
         }
 
-        public void FillTreeView<T>(List<T> data)
+        public void FillTreeView<T>(List<T> data, string[] propertyNames)
         {
             Clear();
             treeView.BeginUpdate();
@@ -93,56 +93,25 @@ namespace VisualComponentLibrary
             var reflectionData = new List<(string, string)>();
             foreach (var obj in data)
             {
-                foreach(var prop in obj.GetType().GetFields())
+                TreeNode currNode = treeView.Nodes[0];
+                for (int j = 0; j < propertyNames.Length; j++)
                 {
-                    var propName = prop.Name;
-                    var propValue = prop.GetValue(obj);
-                    reflectionData.Add((propName, propValue.ToString()));
-                }
-            }
-            foreach (var objData in reflectionData)
-            {
-                var propName = objData.Item1;
-                var propValue = objData.Item2;
-                if (treeView.Nodes[0].Nodes
-                    .OfType<TreeNode>()
-                    .FirstOrDefault(x => x.Text.Equals(propName)) != null)
-                {
-                    treeView.Nodes[0].Nodes
-                        .OfType<TreeNode>()
-                        .First(x => x.Text.Equals(propName))
-                        .Nodes.Add(propValue);
-                }
-                else
-                {
-                    treeView.Nodes[0].Nodes.Add(new TreeNode(propName));
-                    treeView.Nodes[0].Nodes
-                        .OfType<TreeNode>()
-                        .First(x => x.Text.Equals(propName))
-                        .Nodes.Add(propValue);
-                }
-            }
-
-            /*foreach (Component component in components)
-            {
-
-                int index = treeView.Nodes.Add(new TreeNode(component.text));
-                if (component.children != null)
-                {
-                    foreach (Component comp in component.children)
+                    var prop = obj.GetType().GetFields().First(x => x.Name.Equals(propertyNames[j]));
+                    var propValue = prop?.GetValue(obj);
+                    TreeNode nodeSearchResult;
+                    if ((nodeSearchResult = currNode.Nodes
+                                            .OfType<TreeNode>()
+                                            .FirstOrDefault(x => x.Text.Equals(propValue))) != null)
                     {
-                        int i = treeView.Nodes[index].Nodes.Add(new TreeNode(comp.text));
-                        if (comp.children != null)
-                        {
-                            foreach (Component c in comp.children)
-                            {
-                                treeView.Nodes[index].Nodes[i].Nodes.Add(new TreeNode(c.text));
-                            }
-                        }
+                        currNode = nodeSearchResult;
+                    }
+                    else
+                    {
+                        var addedNode = currNode.Nodes.Add(propValue.ToString());
+                        currNode = addedNode;
                     }
                 }
-            }*/
-
+            }
             treeView.EndUpdate();
             treeView.ExpandAll();
         }
