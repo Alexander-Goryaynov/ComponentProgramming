@@ -6,8 +6,10 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using Xceed.Document.NET;
 
 namespace NonVisualComponentLibrary
 {
@@ -24,7 +26,8 @@ namespace NonVisualComponentLibrary
 
             InitializeComponent();
         }
-        public void CreatePDFReport<T>(List<T> list, string header, string path)
+        public void CreatePDFReport<T>(List<T> list, string header, string path, 
+            Dictionary<int, int> cellsToMerge)
         {
 
             var fieldInfoes = typeof(T).GetFields();
@@ -54,12 +57,35 @@ namespace NonVisualComponentLibrary
             cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
             table.AddCell(cell);
 
-            foreach (var elem in fieldInfoes)
+            // Собираем информацию о смёрженных ячейках и их длинах
+            var headerInfo = new Dictionary<string, int>();
+            for (int i = 0; i < fieldInfoes.Length; i++)
             {
-                table.AddCell(new PdfPCell(new Phrase(elem.Name, fontForCellBold))
+                if (cellsToMerge.ContainsKey(i))
                 {
+                    var mergedCellText = "";
+                    for (int j = i; j <= cellsToMerge[i]; j++)
+                    {
+                        mergedCellText += fieldInfoes[j].Name;
+                    }
+                    headerInfo.Add(mergedCellText, cellsToMerge[i] - i + 1);
+                    i += cellsToMerge[i] - i;
+                } 
+                else
+                {
+                    headerInfo.Add(fieldInfoes[i].Name, 1);
+                }
+            }
+
+            // вставляем имена колонок
+            foreach (var el in headerInfo)
+            {
+                table.AddCell(new PdfPCell(new Phrase(el.Key, fontForCellBold))
+                {
+                    Colspan = el.Value,
                     HorizontalAlignment = Element.ALIGN_CENTER
                 });
+                Debug.WriteLine(el.Key + el.Value);
             }
 
             //заполняем таблицу

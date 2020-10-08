@@ -21,7 +21,7 @@ namespace TestingForms
         private void buttonLoad_Click(object sender, EventArgs e)
         {
             var list = componentBinaryRestore.RecoveryBackUp<Human>(@"C:\tmp\Human.zip");
-            controlTreeViewOutput.FillTreeView<Human>(list);
+            controlTreeViewOutput.FillTreeView<Human>(list, new string[] { "weight", "name"});
         }
 
         private void buttonHistogram_Click(object sender, EventArgs e)
@@ -46,12 +46,13 @@ namespace TestingForms
         {
             try
             {
-                var list = new List<Human>();
+                var list = new List<DataForTable>();
                 for (int i = 0; i < 12; i++)
                 {
-                    list.Add(new Human());
+                    list.Add(new DataForTable());
                 }
-                componentPdfReport.CreatePDFReport<Human>(list, "Клиенты", @"C:\tmp\CopReport.pdf");
+                componentPdfReport.CreatePDFReport<DataForTable>(list, "Клиенты",
+                    @"C:\tmp\CopReport.pdf", new Dictionary<int, int>() { { 0, 1 }, { 3, 4} });
                 MessageBox.Show("Всё хорошо");
             } 
             catch (Exception ex)
