@@ -41,6 +41,7 @@
             this.controlDataGridViewOutput = new ClassLibraryControlSelected.ControlDataGridViewOutput();
             this.componentExcelDiagram = new ClassLibraryControlInvisible.ComponentExcelDiagram(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.componentBinaryRestore = new NonVisualComponentLibrary.ComponentBinaryRestore(this.components);
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,5 +173,6 @@
         private ClassLibraryControlSelected.ControlDataGridViewOutput controlDataGridViewOutput;
         private ClassLibraryControlInvisible.ComponentExcelDiagram componentExcelDiagram;
         private System.Windows.Forms.Label label1;
+        private NonVisualComponentLibrary.ComponentBinaryRestore componentBinaryRestore;
     }
 }

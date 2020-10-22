@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryDatabase.Implementations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,19 +20,16 @@ namespace Library
             var container = BuildUnityContainer();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(container.Resolve<FormMain>());
+            Application.Run(container.Resolve<FormBooks>());
         }
 
         private static IUnityContainer BuildUnityContainer()
         {
             var currentContainer = new UnityContainer();
-            currentContainer.RegisterType<LibraryDatabaseContext>(new
-                HierarchicalLifetimeManager());
             currentContainer.RegisterType<BookServiceDB>(new
                 HierarchicalLifetimeManager());
             currentContainer.RegisterType<TypeServiceDB>(new
                 HierarchicalLifetimeManager());
-
             return currentContainer;
         }
     }
