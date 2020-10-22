@@ -40,8 +40,8 @@
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlDataGridViewOutput = new ClassLibraryControlSelected.ControlDataGridViewOutput();
             this.componentExcelDiagram = new ClassLibraryControlInvisible.ComponentExcelDiagram(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.componentBinaryRestore = new NonVisualComponentLibrary.ComponentBinaryRestore(this.components);
+            this.componentReportExcel = new NotVisualComponentLibrary.ComponentReportExcel(this.components);
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,21 +127,11 @@
             this.controlDataGridViewOutput.Size = new System.Drawing.Size(302, 316);
             this.controlDataGridViewOutput.TabIndex = 5;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 244);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Добавь репорт Кристины";
-            // 
             // FormBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(406, 349);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.controlDataGridViewOutput);
             this.Controls.Add(this.buttonRef);
             this.Controls.Add(this.buttonDel);
@@ -172,7 +162,7 @@
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private ClassLibraryControlSelected.ControlDataGridViewOutput controlDataGridViewOutput;
         private ClassLibraryControlInvisible.ComponentExcelDiagram componentExcelDiagram;
-        private System.Windows.Forms.Label label1;
         private NonVisualComponentLibrary.ComponentBinaryRestore componentBinaryRestore;
+        private NotVisualComponentLibrary.ComponentReportExcel componentReportExcel;
     }
 }
