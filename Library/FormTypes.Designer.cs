@@ -93,6 +93,7 @@
             this.Name = "FormTypes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Types";
+            this.Load += new System.EventHandler(this.FormTypes_Load);
             this.ResumeLayout(false);
 
         }
