@@ -10,12 +10,19 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NonVisualComponentLibrary", "NonVisualComponentLibrary\NonVisualComponentLibrary.csproj", "{A6FC6B20-8166-4D73-95E7-43E89D18C325}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{67CABB3A-ED80-4118-BACC-FB880951714F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9FA43BCC-1AE9-4AFF-8C7F-3FB26CBC3AAF} = {9FA43BCC-1AE9-4AFF-8C7F-3FB26CBC3AAF}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryDatabase", "LibraryDatabase\LibraryDatabase.csproj", "{351E0E75-CFF1-45DF-9B7E-72040FBFFEEA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotVisualComponentLibrary", "..\Library-master\NotVisualComponentLibrary\NotVisualComponentLibrary.csproj", "{10EFBA91-512D-47C1-9BA0-62351EA1ECF5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryVisualComponent", "..\Library-master\ClassLibraryVisualComponent\ClassLibraryVisualComponent.csproj", "{AA5F07A6-5593-4675-A3AB-B8626F5B55D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryControlSelected", "..\COPLaba-master-Alina\ClassLibraryControlSelected\ClassLibraryControlSelected.csproj", "{9FA43BCC-1AE9-4AFF-8C7F-3FB26CBC3AAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryControlInvisible", "..\COPLaba-master-Alina\ClassLibraryControlInvisible\ClassLibraryControlInvisible.csproj", "{655AAB73-1F2B-4340-8C9D-7631B6B74B1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +118,30 @@ Global
 		{AA5F07A6-5593-4675-A3AB-B8626F5B55D4}.Release|x64.Build.0 = Release|Any CPU
 		{AA5F07A6-5593-4675-A3AB-B8626F5B55D4}.Release|x86.ActiveCfg = Release|Any CPU
 		{AA5F07A6-5593-4675-A3AB-B8626F5B55D4}.Release|x86.Build.0 = Release|Any CPU
+		{9FA43BCC-1AE9-4AFF-8C7F-3FB26CBC3AAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FA43BCC-1AE9-4AFF-8C7F-3FB26CBC3AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FA43BCC-1AE9-4AFF-8C7F-3FB26CBC3AAF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9FA43BCC-1AE9-4AFF-8C7F-3FB26CBC3AAF}.Debug|x64.Build.0 = Debug|Any CPU
+		{9FA43BCC-1AE9-4AFF-8C7F-3FB26CBC3AAF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9FA43BCC-1AE9-4AFF-8C7F-3FB26CBC3AAF}.Debug|x86.Build.0 = Debug|Any CPU
+		{9FA43BCC-1AE9-4AFF-8C7F-3FB26CBC3AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FA43BCC-1AE9-4AFF-8C7F-3FB26CBC3AAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FA43BCC-1AE9-4AFF-8C7F-3FB26CBC3AAF}.Release|x64.ActiveCfg = Release|Any CPU
+		{9FA43BCC-1AE9-4AFF-8C7F-3FB26CBC3AAF}.Release|x64.Build.0 = Release|Any CPU
+		{9FA43BCC-1AE9-4AFF-8C7F-3FB26CBC3AAF}.Release|x86.ActiveCfg = Release|Any CPU
+		{9FA43BCC-1AE9-4AFF-8C7F-3FB26CBC3AAF}.Release|x86.Build.0 = Release|Any CPU
+		{655AAB73-1F2B-4340-8C9D-7631B6B74B1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{655AAB73-1F2B-4340-8C9D-7631B6B74B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{655AAB73-1F2B-4340-8C9D-7631B6B74B1E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{655AAB73-1F2B-4340-8C9D-7631B6B74B1E}.Debug|x64.Build.0 = Debug|Any CPU
+		{655AAB73-1F2B-4340-8C9D-7631B6B74B1E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{655AAB73-1F2B-4340-8C9D-7631B6B74B1E}.Debug|x86.Build.0 = Debug|Any CPU
+		{655AAB73-1F2B-4340-8C9D-7631B6B74B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{655AAB73-1F2B-4340-8C9D-7631B6B74B1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{655AAB73-1F2B-4340-8C9D-7631B6B74B1E}.Release|x64.ActiveCfg = Release|Any CPU
+		{655AAB73-1F2B-4340-8C9D-7631B6B74B1E}.Release|x64.Build.0 = Release|Any CPU
+		{655AAB73-1F2B-4340-8C9D-7631B6B74B1E}.Release|x86.ActiveCfg = Release|Any CPU
+		{655AAB73-1F2B-4340-8C9D-7631B6B74B1E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

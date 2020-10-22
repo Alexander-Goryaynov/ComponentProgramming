@@ -32,10 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.controlTextBoxInput1 = new ClassLibraryVisualComponent.ControlTextBoxInput();
+            this.controlTextBoxInput = new ClassLibraryVisualComponent.ControlTextBoxInput();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.controlCheckedListBox1 = new VisualComponentLibrary.ControlCheckedListBox();
+            this.controlCheckedListBox = new VisualComponentLibrary.ControlCheckedListBox();
             this.SuspendLayout();
             // 
             // textBoxTitle
@@ -72,15 +72,15 @@
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
-            // controlTextBoxInput1
+            // controlTextBoxInput
             // 
-            this.controlTextBoxInput1.InputText = new System.DateTime(((long)(0)));
-            this.controlTextBoxInput1.Location = new System.Drawing.Point(27, 45);
-            this.controlTextBoxInput1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.controlTextBoxInput1.Name = "controlTextBoxInput1";
-            this.controlTextBoxInput1.Size = new System.Drawing.Size(269, 26);
-            this.controlTextBoxInput1.TabIndex = 5;
-            this.controlTextBoxInput1.typeDate = "dd MMMM yyyy";
+            this.controlTextBoxInput.InputText = new System.DateTime(((long)(0)));
+            this.controlTextBoxInput.Location = new System.Drawing.Point(27, 45);
+            this.controlTextBoxInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.controlTextBoxInput.Name = "controlTextBoxInput";
+            this.controlTextBoxInput.Size = new System.Drawing.Size(269, 26);
+            this.controlTextBoxInput.TabIndex = 5;
+            this.controlTextBoxInput.typeDate = "dd MMMM yyyy";
             // 
             // label2
             // 
@@ -102,21 +102,21 @@
             // 
             // controlCheckedListBox1
             // 
-            this.controlCheckedListBox1.Location = new System.Drawing.Point(46, 84);
-            this.controlCheckedListBox1.Name = "controlCheckedListBox1";
-            this.controlCheckedListBox1.SelectedIndex = 0;
-            this.controlCheckedListBox1.Size = new System.Drawing.Size(153, 147);
-            this.controlCheckedListBox1.TabIndex = 8;
+            this.controlCheckedListBox.Location = new System.Drawing.Point(46, 84);
+            this.controlCheckedListBox.Name = "controlCheckedListBox1";
+            this.controlCheckedListBox.SelectedIndex = 0;
+            this.controlCheckedListBox.Size = new System.Drawing.Size(153, 147);
+            this.controlCheckedListBox.TabIndex = 8;
             // 
             // FormBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 282);
-            this.Controls.Add(this.controlCheckedListBox1);
+            this.Controls.Add(this.controlCheckedListBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.controlTextBoxInput1);
+            this.Controls.Add(this.controlTextBoxInput);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.label1);
@@ -135,9 +135,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;
-        private ClassLibraryVisualComponent.ControlTextBoxInput controlTextBoxInput1;
+        private ClassLibraryVisualComponent.ControlTextBoxInput controlTextBoxInput;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private VisualComponentLibrary.ControlCheckedListBox controlCheckedListBox1;
+        private VisualComponentLibrary.ControlCheckedListBox controlCheckedListBox;
     }
 }

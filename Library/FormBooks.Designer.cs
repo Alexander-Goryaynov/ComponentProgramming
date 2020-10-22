@@ -53,6 +53,7 @@
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonUpd
             // 
@@ -62,6 +63,7 @@
             this.buttonUpd.TabIndex = 1;
             this.buttonUpd.Text = "Update";
             this.buttonUpd.UseVisualStyleBackColor = true;
+            this.buttonUpd.Click += new System.EventHandler(this.buttonUpd_Click);
             // 
             // buttonDel
             // 
@@ -71,6 +73,7 @@
             this.buttonDel.TabIndex = 2;
             this.buttonDel.Text = "Delete";
             this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
             // buttonRef
             // 
@@ -80,6 +83,7 @@
             this.buttonRef.TabIndex = 3;
             this.buttonRef.Text = "Refresh";
             this.buttonRef.UseVisualStyleBackColor = true;
+            this.buttonRef.Click += new System.EventHandler(this.buttonRef_Click);
             // 
             // menuStrip
             // 
@@ -99,24 +103,28 @@
             this.addTypeToolStripMenuItem.Name = "addTypeToolStripMenuItem";
             this.addTypeToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.addTypeToolStripMenuItem.Text = "Add type";
+            this.addTypeToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // recoverToolStripMenuItem
             // 
             this.recoverToolStripMenuItem.Name = "recoverToolStripMenuItem";
             this.recoverToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.recoverToolStripMenuItem.Text = "Recover";
+            this.recoverToolStripMenuItem.Click += new System.EventHandler(this.recoverToolStripMenuItem_Click);
             // 
             // diagramToolStripMenuItem
             // 
             this.diagramToolStripMenuItem.Name = "diagramToolStripMenuItem";
             this.diagramToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.diagramToolStripMenuItem.Text = "Diagram";
+            this.diagramToolStripMenuItem.Click += new System.EventHandler(this.diagramToolStripMenuItem_Click);
             // 
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.reportToolStripMenuItem.Text = "Report";
+            this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
             // 
             // controlDataGridViewOutput
             // 
@@ -142,6 +150,7 @@
             this.Name = "FormBooks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Books";
+            this.Load += new System.EventHandler(this.FormBooks_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);

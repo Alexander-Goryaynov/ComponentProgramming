@@ -39,8 +39,9 @@
     <Reference Include="ClassLibraryControlInvisible">
       <HintPath>.\ClassLibraryControlInvisible.dll</HintPath>
     </Reference>
-    <Reference Include="ClassLibraryControlSelected">
-      <HintPath>.\ClassLibraryControlSelected.dll</HintPath>
+    <Reference Include="ClassLibraryControlSelected, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\COPLaba-master-Alina\ClassLibraryControlSelected\bin\Debug\ClassLibraryControlSelected.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
       <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
@@ -105,8 +106,8 @@
     <Reference Include="Microsoft.Identity.Client, Version=3.0.8.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Identity.Client.3.0.8\lib\net45\Microsoft.Identity.Client.dll</HintPath>
     </Reference>
-    <Reference Include="NotVisualComponentLibraryKristina">
-      <HintPath>.\NotVisualComponentLibraryKristina.dll</HintPath>
+    <Reference Include="NotVisualComponentLibrary">
+      <HintPath>..\..\Library-master\NotVisualComponentLibrary\bin\Debug\NotVisualComponentLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -228,6 +229,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Library-master\ClassLibraryVisualComponent\ClassLibraryVisualComponent.csproj">
+      <Project>{AA5F07A6-5593-4675-A3AB-B8626F5B55D4}</Project>
+      <Name>ClassLibraryVisualComponent</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LibraryDatabase\LibraryDatabase.csproj">
       <Project>{351e0e75-cff1-45df-9b7e-72040fbffeea}</Project>
       <Name>LibraryDatabase</Name>
@@ -235,6 +240,10 @@
     <ProjectReference Include="..\NonVisualComponentLibrary\NonVisualComponentLibrary.csproj">
       <Project>{A6FC6B20-8166-4D73-95E7-43E89D18C325}</Project>
       <Name>NonVisualComponentLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VisualComponentLibrary\VisualComponentLibrary.csproj">
+      <Project>{D596E25B-41E4-4F48-B711-98C290B500AE}</Project>
+      <Name>VisualComponentLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
