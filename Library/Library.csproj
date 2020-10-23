@@ -37,11 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ClassLibraryControlInvisible">
-      <HintPath>.\ClassLibraryControlInvisible.dll</HintPath>
-    </Reference>
-    <Reference Include="ClassLibraryControlSelected, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\COPLaba-master-Alina\ClassLibraryControlSelected\bin\Debug\ClassLibraryControlSelected.dll</HintPath>
+      <HintPath>..\..\COPLaba-master-Alina\ClassLibraryControlInvisible\bin\Debug\ClassLibraryControlInvisible.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
       <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
@@ -229,6 +225,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\COPLaba-master-Alina\ClassLibraryControlSelected\ClassLibraryControlSelected.csproj">
+      <Project>{9fa43bcc-1ae9-4aff-8c7f-3fb26cbc3aaf}</Project>
+      <Name>ClassLibraryControlSelected</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Library-master\ClassLibraryVisualComponent\ClassLibraryVisualComponent.csproj">
       <Project>{AA5F07A6-5593-4675-A3AB-B8626F5B55D4}</Project>
       <Name>ClassLibraryVisualComponent</Name>

@@ -18,10 +18,11 @@ namespace LibraryDatabase.Implementations
 
         public List<ReportModel> GetBooksWithDate()
         {
+            var cultureEng = CultureInfo.CreateSpecificCulture("en-US");
             List<ReportModel> result = context.Books.Select(rec => new ReportModel
             {
                 Title = rec.Title,
-                Date = rec.Date.Value.ToString("dd mm yyyy", CultureInfo.CreateSpecificCulture("en-US"))
+                Date = rec.Date.Value.ToString("dd mm yyyy", cultureEng)
             })
             .ToList();
             return result;

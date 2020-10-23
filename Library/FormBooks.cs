@@ -1,10 +1,14 @@
 ﻿using ClassLibraryControlInvisible;
+using LibraryDatabase;
+using LibraryDatabase.DbModels;
 using LibraryDatabase.Implementations;
 using LibraryDatabase.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using Unity;
+using Type = LibraryDatabase.DbModels.Type;
 
 namespace Library
 {
@@ -29,24 +33,22 @@ namespace Library
 
         private void FormBooks_Load(object sender, EventArgs e)
         {
-            SetDataGrid();
             LoadData();
         }
 
         private void SetDataGrid()
         {
             List<ClassLibraryControlSelected.Column> col = new List<ClassLibraryControlSelected.Column>();
-            foreach (var p in typeof(TypeModel).GetProperties())
+            foreach (var prop in typeof(TypeModel).GetProperties())
             {
-                int i = controlDataGridViewOutput.Width / 2;
-                if (p.Name == "Id")
+                int i = controlDataGridViewOutput.Width / 3;
+                if (prop.Name.Equals("Id"))
                 {
-
-                    col.Add(new ClassLibraryControlSelected.Column(p.Name, false, i));
+                    col.Add(new ClassLibraryControlSelected.Column(prop.Name, false, i));
                 }
                 else
                 {
-                    col.Add(new ClassLibraryControlSelected.Column(p.Name, true, i));
+                    col.Add(new ClassLibraryControlSelected.Column(prop.Name, true, i));
                 }
             }
             controlDataGridViewOutput.SetHeaders(col);
@@ -54,6 +56,7 @@ namespace Library
 
         private void LoadData()
         {
+            SetDataGrid();
             try
             {
                 List<BookModel> list = serviceB.GetList();
@@ -64,6 +67,7 @@ namespace Library
                         controlDataGridViewOutput.AddRow(el);
                     }
                 }
+                controlDataGridViewOutput.FillDataGrid(list);
             }
             catch (Exception ex)
             {
@@ -142,8 +146,8 @@ namespace Library
                     {
                         serviceB.DelElement(list[i].Id);
                     }
-                    list = componentBinaryRestore.RecoveryBackUp<BookModel>(sfd.FileName);
-                    foreach (var el in list)
+                    var restoredList = componentBinaryRestore.RecoveryBackUp<BookModel>(sfd.FileName);
+                    foreach (var el in restoredList)
                     {
                         serviceB.AddElement(el);
                     }
@@ -156,6 +160,21 @@ namespace Library
                     MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void backupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var context = new LibraryDbContext();
+            List<BookModel> books = new List<BookModel>
+            {
+                serviceB.GetElement(5),
+                serviceB.GetElement(6)
+            };
+            List<Type> types = context.Types.ToList();
+            List<BookType> btypes = context.BookTypes.ToList();
+            var paths = new string[] { @"C:\tmp\backup\back1.dat",
+                @"C:\tmp\backup\back2.dat", @"C:\tmp\backup\back3.dat" };
+            componentBinaryArchive.SetData<BookModel>(books, paths[0]);
         }
 
         private void diagramToolStripMenuItem_Click(object sender, EventArgs e)
@@ -191,13 +210,13 @@ namespace Library
         {
             SaveFileDialog sfd = new SaveFileDialog
             {
-                Filter = "xls|*.xls",
+                Filter = "xlsx|*.xlsx",
             };
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    componentReportExcel.DisplayInExcel<ReportModel>(serviceR.GetBooksWithDate(), sfd.FileName, "Книги", new Dictionary<string, string> { });
+                    componentReportExcel.DisplayInExcel<ReportModel>(serviceR.GetBooksWithDate(), sfd.FileName, "Books", new Dictionary<string, string> { });
                     MessageBox.Show("Выполнено", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)

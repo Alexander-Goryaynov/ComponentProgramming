@@ -4,6 +4,7 @@ using System.Text;
 
 namespace LibraryDatabase.Models
 {
+    [Serializable]
     public class TypeModel
     {
         public int Id { get; set; }

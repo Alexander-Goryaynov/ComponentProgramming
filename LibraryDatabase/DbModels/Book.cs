@@ -5,6 +5,7 @@ using System.Text;
 
 namespace LibraryDatabase.DbModels
 {
+    [Serializable]
     public class Book
     {
         public int Id { get; set; }

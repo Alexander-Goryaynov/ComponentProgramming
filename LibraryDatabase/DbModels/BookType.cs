@@ -4,6 +4,7 @@ using System.Text;
 
 namespace LibraryDatabase.DbModels
 {
+    [Serializable]
     public class BookType
     {
         public int Id { get; set; }

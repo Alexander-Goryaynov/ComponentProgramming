@@ -42,6 +42,8 @@
             this.componentExcelDiagram = new ClassLibraryControlInvisible.ComponentExcelDiagram(this.components);
             this.componentBinaryRestore = new NonVisualComponentLibrary.ComponentBinaryRestore(this.components);
             this.componentReportExcel = new NotVisualComponentLibrary.ComponentReportExcel(this.components);
+            this.componentBinaryArchive = new ClassLibraryControlInvisible.ComponentBinaryArchive(this.components);
+            this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,7 +93,8 @@
             this.addTypeToolStripMenuItem,
             this.recoverToolStripMenuItem,
             this.diagramToolStripMenuItem,
-            this.reportToolStripMenuItem});
+            this.reportToolStripMenuItem,
+            this.backupToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(406, 24);
@@ -135,6 +138,13 @@
             this.controlDataGridViewOutput.Size = new System.Drawing.Size(302, 316);
             this.controlDataGridViewOutput.TabIndex = 5;
             // 
+            // backupToolStripMenuItem
+            // 
+            this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.backupToolStripMenuItem.Text = "Backup";
+            this.backupToolStripMenuItem.Click += new System.EventHandler(this.backupToolStripMenuItem_Click);
+            // 
             // FormBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,5 +183,7 @@
         private ClassLibraryControlInvisible.ComponentExcelDiagram componentExcelDiagram;
         private NonVisualComponentLibrary.ComponentBinaryRestore componentBinaryRestore;
         private NotVisualComponentLibrary.ComponentReportExcel componentReportExcel;
+        private ClassLibraryControlInvisible.ComponentBinaryArchive componentBinaryArchive;
+        private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
     }
 }

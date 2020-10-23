@@ -62,6 +62,7 @@
             this.buttonSave.TabIndex = 3;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonCancel
             // 
@@ -71,6 +72,7 @@
             this.buttonCancel.TabIndex = 4;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // controlTextBoxInput
             // 
@@ -100,10 +102,10 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Type";
             // 
-            // controlCheckedListBox1
+            // controlCheckedListBox
             // 
             this.controlCheckedListBox.Location = new System.Drawing.Point(46, 84);
-            this.controlCheckedListBox.Name = "controlCheckedListBox1";
+            this.controlCheckedListBox.Name = "controlCheckedListBox";
             this.controlCheckedListBox.SelectedIndex = 0;
             this.controlCheckedListBox.Size = new System.Drawing.Size(153, 147);
             this.controlCheckedListBox.TabIndex = 8;
@@ -124,6 +126,7 @@
             this.Name = "FormBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Book";
+            this.Load += new System.EventHandler(this.FormBook_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
