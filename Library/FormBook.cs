@@ -1,5 +1,6 @@
 ﻿using LibraryDatabase.Implementations;
 using LibraryDatabase.Models;
+using PatternLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -65,6 +66,16 @@ namespace Library
 
         private void LoadData()
         {
+            if (comboBoxFresh.Items.Count == 0)
+            {
+                comboBoxFresh.Items.AddRange(new string[] { "Used", "Fresh" });
+            }
+            comboBoxFresh.DropDownStyle = ComboBoxStyle.DropDownList;
+            if (comboBoxForm.Items.Count == 0)
+            {
+                comboBoxForm.Items.AddRange(new string[] { "Journal", "Book" });
+            }
+            comboBoxForm.DropDownStyle = ComboBoxStyle.DropDownList;
             try
             {
                 List<TypeModel> list = serviceT.GetList();
@@ -100,6 +111,29 @@ namespace Library
                 MessageBox.Show("Заполните дату", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            string info = " ";
+            if (comboBoxFresh.SelectedIndex > -1 && comboBoxForm.SelectedIndex > -1)
+            {
+                var childs = (typeof(LiteratureFactory))
+                    .Assembly
+                    .GetTypes()
+                    .Where(t => t.IsSubclassOf(
+                        typeof(LiteratureFactory)) &&
+                        !t.IsAbstract);
+                var factory = (LiteratureFactory)((childs
+                    .SingleOrDefault(r => r.Name == comboBoxFresh.Text + "LiteratureFactory")?
+                    .GetConstructor(new Type[] { })
+                    .Invoke(new object[] { })) ?? null);
+                var client = new LiteratureClient(factory);                
+                if (comboBoxForm.SelectedItem.ToString().Equals("Book"))
+                {
+                    info += client.GetName() + " " + client.GetBookInfoPageText() + " ";
+                } 
+                else if (comboBoxForm.SelectedItem.ToString().Equals("Journal"))
+                {
+                    info += client.GetName() + " " + client.GetJournalPrice() + " ";
+                }
+            }
             try
             {
                 var list = new List<BookTypeModel>();
@@ -117,7 +151,7 @@ namespace Library
                     serviceB.UpdElement(new BookModel
                     {
                         Id = id.Value,
-                        Title = textBoxTitle.Text,
+                        Title = textBoxTitle.Text + info,
                         Date = controlTextBoxInput.InputText,
                         BookTypes = list
                     });
@@ -126,7 +160,7 @@ namespace Library
                 {
                     serviceB.AddElement(new BookModel
                     {
-                        Title = textBoxTitle.Text,
+                        Title = textBoxTitle.Text + info,
                         Date = controlTextBoxInput.InputText,
                         BookTypes = list
                     });
