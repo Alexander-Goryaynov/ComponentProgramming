@@ -58,5 +58,8 @@
     <Compile Include="UsedJournal.cs" />
     <Compile Include="UsedLiteratureFactory.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AdapterPattern\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

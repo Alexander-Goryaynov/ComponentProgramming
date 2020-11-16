@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PatternLibrary.AdapterPattern
+{
+    public class Volume : IBook
+    {
+        public string GetAnnotation()
+        {
+            return "объёмная книжка";
+        }
+    }
+}
