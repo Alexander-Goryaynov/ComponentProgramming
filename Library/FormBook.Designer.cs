@@ -36,6 +36,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.controlCheckedListBox = new VisualComponentLibrary.ControlCheckedListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxSubclass = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // textBoxTitle
@@ -56,7 +58,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(15, 249);
+            this.buttonSave.Location = new System.Drawing.Point(14, 288);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 3;
@@ -66,7 +68,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(106, 249);
+            this.buttonCancel.Location = new System.Drawing.Point(105, 288);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 4;
@@ -96,7 +98,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 88);
+            this.label3.Location = new System.Drawing.Point(8, 127);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 7;
@@ -104,17 +106,36 @@
             // 
             // controlCheckedListBox
             // 
-            this.controlCheckedListBox.Location = new System.Drawing.Point(46, 84);
+            this.controlCheckedListBox.Location = new System.Drawing.Point(45, 123);
             this.controlCheckedListBox.Name = "controlCheckedListBox";
             this.controlCheckedListBox.SelectedIndex = 0;
             this.controlCheckedListBox.Size = new System.Drawing.Size(153, 147);
             this.controlCheckedListBox.TabIndex = 8;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 87);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Subclass";
+            // 
+            // comboBoxSubclass
+            // 
+            this.comboBoxSubclass.FormattingEnabled = true;
+            this.comboBoxSubclass.Location = new System.Drawing.Point(70, 84);
+            this.comboBoxSubclass.Name = "comboBoxSubclass";
+            this.comboBoxSubclass.Size = new System.Drawing.Size(222, 21);
+            this.comboBoxSubclass.TabIndex = 10;
+            // 
             // FormBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 282);
+            this.ClientSize = new System.Drawing.Size(304, 317);
+            this.Controls.Add(this.comboBoxSubclass);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.controlCheckedListBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -142,5 +163,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private VisualComponentLibrary.ControlCheckedListBox controlCheckedListBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBoxSubclass;
     }
 }

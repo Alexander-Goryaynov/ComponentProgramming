@@ -1,5 +1,7 @@
 ﻿using LibraryDatabase.Implementations;
 using LibraryDatabase.Models;
+using PatternLibrary;
+using PatternLibrary.AdapterPattern;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -99,6 +101,17 @@ namespace Library
             {
                 MessageBox.Show("Заполните дату", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+            string literAnnot = "";
+            if (comboBoxSubclass.Text.Equals("Volume"))
+            {
+                var book = new Volume();
+                literAnnot = book.GetAnnotation();
+            } 
+            else if (comboBoxSubclass.Text.Equals("Journal")) 
+            {
+                var journal = new Adapter(new Magazine());
+                literAnnot = journal.GetAnnotation();
             }
             try
             {
