@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdapterPattern\Adapter.cs" />
+    <Compile Include="AdapterPattern\IBook.cs" />
+    <Compile Include="AdapterPattern\IJournal.cs" />
+    <Compile Include="AdapterPattern\Literature.cs" />
+    <Compile Include="AdapterPattern\Magazine.cs" />
+    <Compile Include="AdapterPattern\Volume.cs" />
     <Compile Include="Book.cs" />
     <Compile Include="FreshBook.cs" />
     <Compile Include="FreshJournal.cs" />
@@ -54,12 +60,14 @@
     </Compile>
     <Compile Include="LiteratureFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StrategyPattern\BookRead.cs" />
+    <Compile Include="StrategyPattern\IReadable.cs" />
+    <Compile Include="StrategyPattern\JournalRead.cs" />
+    <Compile Include="StrategyPattern\Literature.cs" />
     <Compile Include="UsedBook.cs" />
     <Compile Include="UsedJournal.cs" />
     <Compile Include="UsedLiteratureFactory.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AdapterPattern\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
