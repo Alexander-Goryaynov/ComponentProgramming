@@ -241,6 +241,10 @@
       <Project>{A6FC6B20-8166-4D73-95E7-43E89D18C325}</Project>
       <Name>NonVisualComponentLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PatternLibrary\PatternLibrary.csproj">
+      <Project>{D5139890-929A-449E-BC4B-F9CECD25A499}</Project>
+      <Name>PatternLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VisualComponentLibrary\VisualComponentLibrary.csproj">
       <Project>{D596E25B-41E4-4F48-B711-98C290B500AE}</Project>
       <Name>VisualComponentLibrary</Name>
