@@ -36,10 +36,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="ClassLibraryControlInvisible">
       <HintPath>..\..\COPLaba-master-Alina\ClassLibraryControlInvisible\bin\Debug\ClassLibraryControlInvisible.dll</HintPath>
     </Reference>
-    <Reference Include="itextsharp">
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -115,6 +118,7 @@
     <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -175,6 +179,12 @@
     <Compile Include="FormBooks.Designer.cs">
       <DependentUpon>FormBooks.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPlugins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPlugins.Designer.cs">
+      <DependentUpon>FormPlugins.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +197,7 @@
     <Compile Include="FormTypes.Designer.cs">
       <DependentUpon>FormTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormBook.resx">
@@ -194,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBooks.resx">
       <DependentUpon>FormBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPlugins.resx">
+      <DependentUpon>FormPlugins.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormType.resx">
       <DependentUpon>FormType.cs</DependentUpon>
@@ -240,6 +254,22 @@
     <ProjectReference Include="..\NonVisualComponentLibrary\NonVisualComponentLibrary.csproj">
       <Project>{A6FC6B20-8166-4D73-95E7-43E89D18C325}</Project>
       <Name>NonVisualComponentLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PluginChangeDate\PluginChangeDate.csproj">
+      <Project>{16C658DA-19CE-4C5A-B2AA-694D20B362CB}</Project>
+      <Name>PluginChangeDate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PluginChangeType\PluginChangeType.csproj">
+      <Project>{77CC5659-E27A-4BB4-9098-A56E9BBF6D7E}</Project>
+      <Name>PluginChangeType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PluginInterfaces\PluginInterfaces.csproj">
+      <Project>{F853C6FE-6362-41E2-8702-C996B5A396F5}</Project>
+      <Name>PluginInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PluginReportPdf\PluginReportPdf.csproj">
+      <Project>{4384BADC-D21F-4756-B6FE-38D93D85FA44}</Project>
+      <Name>PluginReportPdf</Name>
     </ProjectReference>
     <ProjectReference Include="..\VisualComponentLibrary\VisualComponentLibrary.csproj">
       <Project>{D596E25B-41E4-4F48-B711-98C290B500AE}</Project>

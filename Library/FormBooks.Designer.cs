@@ -38,12 +38,13 @@
             this.recoverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.diagramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlDataGridViewOutput = new ClassLibraryControlSelected.ControlDataGridViewOutput();
             this.componentExcelDiagram = new ClassLibraryControlInvisible.ComponentExcelDiagram(this.components);
             this.componentBinaryRestore = new NonVisualComponentLibrary.ComponentBinaryRestore(this.components);
             this.componentReportExcel = new NotVisualComponentLibrary.ComponentReportExcel(this.components);
             this.componentBinaryArchive = new ClassLibraryControlInvisible.ComponentBinaryArchive(this.components);
-            this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pluginsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,10 +95,11 @@
             this.recoverToolStripMenuItem,
             this.diagramToolStripMenuItem,
             this.reportToolStripMenuItem,
-            this.backupToolStripMenuItem});
+            this.backupToolStripMenuItem,
+            this.pluginsToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(406, 24);
+            this.menuStrip.Size = new System.Drawing.Size(452, 24);
             this.menuStrip.TabIndex = 4;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -129,15 +131,6 @@
             this.reportToolStripMenuItem.Text = "Report";
             this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
             // 
-            // controlDataGridViewOutput
-            // 
-            this.controlDataGridViewOutput.Location = new System.Drawing.Point(96, 28);
-            this.controlDataGridViewOutput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.controlDataGridViewOutput.Name = "controlDataGridViewOutput";
-            this.controlDataGridViewOutput.SelectedIndex = 0;
-            this.controlDataGridViewOutput.Size = new System.Drawing.Size(302, 316);
-            this.controlDataGridViewOutput.TabIndex = 5;
-            // 
             // backupToolStripMenuItem
             // 
             this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
@@ -145,11 +138,27 @@
             this.backupToolStripMenuItem.Text = "Backup";
             this.backupToolStripMenuItem.Click += new System.EventHandler(this.backupToolStripMenuItem_Click);
             // 
+            // controlDataGridViewOutput
+            // 
+            this.controlDataGridViewOutput.Location = new System.Drawing.Point(96, 28);
+            this.controlDataGridViewOutput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.controlDataGridViewOutput.Name = "controlDataGridViewOutput";
+            this.controlDataGridViewOutput.SelectedIndex = 0;
+            this.controlDataGridViewOutput.Size = new System.Drawing.Size(345, 316);
+            this.controlDataGridViewOutput.TabIndex = 5;
+            // 
+            // pluginsToolStripMenuItem
+            // 
+            this.pluginsToolStripMenuItem.Name = "pluginsToolStripMenuItem";
+            this.pluginsToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.pluginsToolStripMenuItem.Text = "Plugins";
+            this.pluginsToolStripMenuItem.Click += new System.EventHandler(this.pluginsToolStripMenuItem_Click);
+            // 
             // FormBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(406, 349);
+            this.ClientSize = new System.Drawing.Size(452, 349);
             this.Controls.Add(this.controlDataGridViewOutput);
             this.Controls.Add(this.buttonRef);
             this.Controls.Add(this.buttonDel);
@@ -185,5 +194,6 @@
         private NotVisualComponentLibrary.ComponentReportExcel componentReportExcel;
         private ClassLibraryControlInvisible.ComponentBinaryArchive componentBinaryArchive;
         private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pluginsToolStripMenuItem;
     }
 }

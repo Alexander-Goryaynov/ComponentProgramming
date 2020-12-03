@@ -225,5 +225,11 @@ namespace Library
                 }
             }
         }
+
+        private void pluginsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormPlugins>();
+            form.ShowDialog();
+        }
     }
 }
