@@ -92,6 +92,7 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
     </Reference>
@@ -105,6 +106,7 @@
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -114,6 +116,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChangeType.cs" />
+    <Compile Include="FormChangeType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChangeType.Designer.cs">
+      <DependentUpon>FormChangeType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -125,10 +133,19 @@
       <Project>{F853C6FE-6362-41E2-8702-C996B5A396F5}</Project>
       <Name>PluginInterfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VisualComponentLibrary\VisualComponentLibrary.csproj">
+      <Project>{D596E25B-41E4-4F48-B711-98C290B500AE}</Project>
+      <Name>VisualComponentLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormChangeType.resx">
+      <DependentUpon>FormChangeType.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -18,15 +18,11 @@ namespace Library
         [Dependency]
         public new IUnityContainer Container { get; set; }
         private readonly BookServiceDB serviceB;
-        private readonly TypeServiceDB serviceT;
         private readonly Manager manager;
-        private Dictionary<string, bool> types = new Dictionary<string, bool>();
-        private List<BookTypeModel> bookTypes = new List<BookTypeModel>();
         public FormPlugins(BookServiceDB serviceB, TypeServiceDB serviceT)
         {
             InitializeComponent();
             this.serviceB = serviceB;
-            this.serviceT = serviceT;
             manager = new Manager();
         }
 
@@ -46,21 +42,7 @@ namespace Library
                 {
                     comboBoxPlugin.Items.AddRange(manager.Headers);
                     comboBoxPlugin.Text = null;
-                }
-                var listT = serviceT.GetList();
-                if (listT != null)
-                {
-                    foreach (var type in listT)
-                    {
-                        bool check = false;
-                        if (bookTypes.FirstOrDefault(rec => rec.TypeId == type.Id) != null)
-                        {
-                            check = true;
-                        }
-                        types.Add(type.Title, check);
-                    }
-                    controlCheckedListTypes.LoadList(types);
-                }
+                }                
             }
             catch (Exception ex)
             {
@@ -81,30 +63,19 @@ namespace Library
                 return;
             }
             try
-            {
-                var listBookTypes = new List<BookTypeModel>();
-                foreach (var checkedValue in controlCheckedListTypes.GetCheckedValues())
+            {                
+                if (comboBoxPlugin.Text == manager.Headers[0])
                 {
-                    var typeId = serviceT.GetId(checkedValue);
-                    listBookTypes.Add(new BookTypeModel
-                    {
-                        TypeId = typeId,
-                        TypeTitle = serviceT.GetElement(typeId).Title
-                    });
+                    manager.p_1(Convert.ToInt32(comboBoxBook.SelectedValue), null);
                 }
-                if (comboBoxPlugin.Text == manager.Headers[0] && listBookTypes != null)
+                if (comboBoxPlugin.Text == manager.Headers[1])
                 {
-                    manager.p_1(Convert.ToInt32(comboBoxBook.SelectedValue), listBookTypes);
-                }
-                if (comboBoxPlugin.Text == manager.Headers[1] && controlTextBoxDate.InputText.HasValue)
-                {
-                    manager.p_2(Convert.ToInt32(comboBoxBook.SelectedValue), controlTextBoxDate.InputText.Value);
+                    manager.p_2(Convert.ToInt32(comboBoxBook.SelectedValue), null);
                 }
                 if (comboBoxPlugin.Text == manager.Headers[2])
                 {
                     manager.p_3(Convert.ToInt32(comboBoxBook.SelectedValue));
                 }
-                MessageBox.Show("Выполнено", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
                 Close();
             }
