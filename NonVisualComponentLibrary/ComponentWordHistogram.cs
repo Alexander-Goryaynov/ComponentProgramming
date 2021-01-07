@@ -40,7 +40,7 @@ namespace NonVisualComponentLibrary
             return pieChart;
         }
 
-        public static Series GetSeries(List<Setting> list, string name)
+        private static Series GetSeries(List<Setting> list, string name)
         {
             Series series = new Series(name);
             series.Bind(list, "Legend", "Value");

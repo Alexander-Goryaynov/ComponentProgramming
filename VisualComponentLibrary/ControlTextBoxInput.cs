@@ -53,7 +53,7 @@ namespace VisualComponentLibrary
             };
         }
 
-        public bool Check()
+        private bool Check()
         {
             if (string.IsNullOrEmpty(textBox.Text) || string.IsNullOrWhiteSpace(textBox.Text))
             {
